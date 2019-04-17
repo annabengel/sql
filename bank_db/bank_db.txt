@@ -13,7 +13,8 @@ CREATE TABLE Transactions (
 	ID int not null primary key auto_increment,
     amount decimal(18,2) not null,
     txn_type nvarchar(50) not null,
-    account_ID int(2) not null
+    account_ID int(2) not null,
+    FOREIGN KEY (account_ID) REFERENCES Accounts(ID) 
 	);
 
 Insert into Accounts (account_holder, balance, fees) Values
